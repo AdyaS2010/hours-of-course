@@ -6,7 +6,7 @@ float calc_hours(int hours[], int weeks, char output);
 
 int main(void)
 {
-    string activity = get_string("Activity: ")
+    string activity = get_string("Activity: ");
     int weeks = get_int("Number of weeks participating in %s: ", activity);
     int hours[weeks];
 
@@ -20,4 +20,21 @@ int main(void)
 float calc_hours(int hours[], int weeks, char output)
 {
     float total = 0;
+    for (int i = 0; i < weeks; i++)
+    {
+        total += hours[i];
+    }
+
+    if (output == 'T')
+    {
+        return total;
+    }
+    else if (output == 'A')
+    {
+        return total / weeks;
+    }
+    else
+    {
+        return 1;
+    }
 }
